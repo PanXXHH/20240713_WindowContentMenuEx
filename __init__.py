@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 import sys
 import importlib
@@ -56,7 +57,11 @@ if not abstf_path.exists() or abstf_path.is_dir():
     exit(-1)
 
 # 注册 contentmenuex 模块
-utils.register(str(abstf_path), Path(__file__).parent / "regedit.yml")
+data_dir = Path(__file__).parent / ".data"
+if not (Path(__file__).parent / ".data").exists() or not (Path(__file__).parent / ".data").is_dir():
+    os.mkdir(Path(__file__).parent / ".data")
+
+utils.register(str(abstf_path), data_dir / "regedit.yml")
 
 # 导入 contentmenuex 模块
 contentmenuex = importlib.import_module(contentmenuex_file_name)
