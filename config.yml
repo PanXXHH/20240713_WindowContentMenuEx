@@ -1,0 +1,5 @@
+debug_mode: True
+std_log_file_name: "std.log"
+Lib-path: ".\\Lib"
+smart_folder_name: 'smart'
+contentmenuex_file_name: '_contentmenuex'
