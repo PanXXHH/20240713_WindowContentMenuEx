@@ -5,6 +5,7 @@ import yaml
 import os
 import hashlib
 
+# hello
 
 def register(path: str, database_path: str):
     if os.path.exists(database_path):
